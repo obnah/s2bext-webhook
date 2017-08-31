@@ -29,7 +29,7 @@
 		{
 			"source": "url",
 			"name": "pr"
-		}
+		},
 		{
 			"source": "url",
 			"name": "cmd"
