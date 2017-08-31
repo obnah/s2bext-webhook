@@ -1,0 +1,39 @@
+[
+{
+	"id": "validate",
+	"execute-command": "whoami",
+	"command-working-directory": "/homes/aaronhan/.s2bext-webhook",
+	"response-message": "Executing redeploy script",
+	"include-command-output-in-response" : true
+},
+{
+	"id": "refresh-worksb",
+	"execute-command": "./refresh-worksb.sh",
+	"command-working-directory": "/homes/aaronhan/.s2bext-webhook",
+	"response-message": "Executing redeploy script",
+	"include-command-output-in-response" : true,
+	"pass-arguments-to-command": [
+		{
+			"source": "url",
+			"name": "pr"
+		}
+	]
+},
+{
+	"id": "s2bext",
+	"execute-command": "./s2bext-wrapper.sh",
+	"command-working-directory": "/homes/aaronhan/.s2bext-webhook",
+	"response-message": "Executing redeploy script",
+	"include-command-output-in-response" : true,
+	"pass-arguments-to-command": [
+		{
+			"source": "url",
+			"name": "pr"
+		}
+		{
+			"source": "url",
+			"name": "cmd"
+		}
+	]
+}
+]
