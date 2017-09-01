@@ -33,6 +33,10 @@
 		{
 			"source": "url",
 			"name": "cmd"
+		},
+		{
+			"source": "url",
+			"name": "seq"
 		}
 	]
 }
