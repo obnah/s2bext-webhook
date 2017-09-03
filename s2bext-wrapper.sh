@@ -19,7 +19,11 @@ if [[ -n $pr ]]; then
 	fi
 fi
 
-s2bext $cmd
+if [[ $cmd == *";"* || $cmd == *"&&"* || $cmd == *"|"* ]]; then
+	echo 'Dude, NO hacking please!'
+else
+	s2bext $cmd
+fi
 
 echo ""
 echo "''''''"
